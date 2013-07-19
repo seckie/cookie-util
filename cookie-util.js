@@ -54,7 +54,7 @@ window.CookieUtil.prototype = {
 			opt.secure ? '; secure' : '',
 		 ].join(''));
 	},
-	delete: function (key, opt) {
+	del: function (key, opt) {
 		if (!key) {
 			if (this.debug) {
 				alert('1st argument (key) is required.');
