@@ -49,7 +49,7 @@ and some options in 3rd argument (optional).
 <tr><td>path</td><td>string</td><td>none</td></tr>
 <tr><td>domain</td><td>string</td><td>none</td></tr>
 <tr><td>secure</td><td>boolean</td><td>false</td></tr>
-<tbody>
+</tbody>
 </table>
 
 #### example
@@ -76,7 +76,7 @@ and some options in 2nd argument (optional).
 <tbody>
 <tr><td>path</td><td>string</td><td>none</td></tr>
 <tr><td>domain</td><td>string</td><td>none</td></tr>
-<tbody>
+</tbody>
 </table>
 
 #### Note:
