@@ -30,7 +30,17 @@ To delete cookie, write like below.
 
 ### get()
 
-You can get cookie value by passing **keyname** in 1st argument.
+You can get cookie value by passing **keyname** in 1st argument.  
+Keyname must be string or RegExp.  
+If you passed string keyname, you'll get string value.  
+If you passed RegExp keyname, you'll get object value (like hash array).
+
+#### example
+
+	// document.cookie == "key1=value1; key2=value2; key3=value3"
+	var obj = util.get(/key/);
+	// obj == { key1:value1, key2:value2, key3:value3 }
+
 
 ### set()
 
@@ -54,7 +64,7 @@ and some options in 3rd argument (optional).
 
 #### example
 
-	util.get('somekey', 'somevalue', {
+	util.set('somekey', 'somevalue', {
 		expires: 10,
 		path: '/somedirectory/',
 		domain: 'www.somedomain.com',

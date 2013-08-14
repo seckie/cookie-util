@@ -22,14 +22,29 @@ window.CookieUtil.prototype = {
 		}
 		var cs = document.cookie.split(';');
 		var holder = {};
-		var c, name, value;
+		var c, name, value, result;
 		for (var i=0,l=cs.length; i<l ; i++) {
 			c = cs[i].replace(/ /g, '').split('=');
 			name = c[0];
 			value = c[1];
 			holder[name] = value;
 		}
-		return holder[key];
+		switch (true) {
+			case key instanceof RegExp:
+				result = {};
+				for (var i in holder) {
+					if (holder.hasOwnProperty(i) && key.test(i)) {
+						result[i] = holder[i];
+					}
+				}
+				break;
+			case typeof key === 'string':
+				result = holder[key];
+				break;
+			default:
+				result = null;
+		}
+		return result;
 	},
 	set: function (key, value, opt) {
 		if (!key || value === undefined) {
