@@ -6,7 +6,7 @@
  * @license    MIT License
  */
 
-;(function(global, document, undefined) {
+;(function(global) {
 
 var CookieUtil = function () {
 	this.debug = false;
@@ -88,4 +88,4 @@ if (module) {
 } else {
   global.cookieUtil = new CookieUtil();
 }
-})(this, this.document);
+})(this);
