@@ -83,9 +83,9 @@ CookieUtil.prototype = {
 	}
 };
 
-if (global.module) {
-  global.module.exports = CookieUtil;
+if (module) {
+  module.exports = new CookieUtil();
 } else {
-  global.CookieUtil = CookieUtil;
+  global.cookieUtil = new CookieUtil();
 }
 })(this, this.document);
