@@ -84,7 +84,7 @@ CookieUtil.prototype = {
 };
 
 if (global.exports) {
-  global.exports.CookieUtil = CookieUtil;
+  global.exports.default = CookieUtil;
 } else {
   global.CookieUtil = CookieUtil;
 }
