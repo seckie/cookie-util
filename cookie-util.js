@@ -6,13 +6,13 @@
  * @license    MIT License
  */
 
-;(function(window, document, undefined) {
+;(function(global, document, undefined) {
 
-window.CookieUtil = function () {
+var CookieUtil = function () {
 	this.debug = false;
 };
 
-window.CookieUtil.prototype = {
+CookieUtil.prototype = {
 	get: function (key) {
 		if (!key) {
 			if (this.debug) {
@@ -83,4 +83,9 @@ window.CookieUtil.prototype = {
 	}
 };
 
+if (module) {
+  module.exports = new CookieUtil();
+} else {
+  global.cookieUtil = new CookieUtil();
+}
 })(this, this.document);
